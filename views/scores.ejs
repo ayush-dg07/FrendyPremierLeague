@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Scores</h1><br>
+    <br><% if(scores.length==0){ %> No Results found <% } %> <br>
+    <% if (scores.length >0) { %> Results: <br>
+    <ul>
+        <% scores.forEach( function(item) {%>
+        <li>
+            Name: <%= item[0] %> <br>
+            Score: <%= item[1] %>
+        </li>
+        <% }); %>
+        <% } %>
+    </ul>
+</body>
+
+</html>
