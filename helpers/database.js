@@ -5,46 +5,18 @@ var PRODUCT_NAME = 8;
 var PRICE = 12;
 
 var insertFields = (order) => {
-    return new Promise((res, rej) => {
-        // mysql code for inserting fields
-        // order is the row from the file
-        console.log(order);
-    });
-}
-
-var createPartner = (name, mobile) => {
-    return new Promise((res, rej) => {
-        // mysql code for creating new partner
-    });
-}
-
-var checkPartner = (mobile) => {
-    return new Promise((res, rej) => {
-        // mysql code for verifying if a partner exists
-
-        res(true);
-    });
-}
-
-
-var verifyPartner = (name, mobile) => {
-    return new Promise((res, rej) => {
-        checkPartner(mobile).then(status => {
-            if (status) res(true);
-            else {
-                createPartner(name, mobile).then(status => {
-                    if (status) res(true);
-                    else res(false);
-                });
-            }
-        });
+    return new Promise(async (res, rej) => {
+        //insert new fields from incoming data
+        //console.log(order);
+        res();
     });
 }
 
 var calculatePoints = () => {
-    return new Promise((res, rej) => {
-        // mysql code for calculating points for each user
+    return new Promise(async (res, rej) => {
+        //calculating points for newly entered fields
+        res();
     });
 }
 
-module.exports = { verifyPartner, insertFields, calculatePoints }
+module.exports = {insertFields, calculatePoints }
