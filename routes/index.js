@@ -2,14 +2,11 @@ var express = require('express');
 var router = express.Router();
 var file = require('../helpers/fileHandling');
 var upload = require('./upload');
+const user= require('./user');
+const scores= require('./scores');
 
-router.get('/', (req, res) => {
-    // file.readFile('data/users.xlsx').then(rows => {
-    //     res.render('scores', { scores: rows });
-    // });
-    res.send('<h1>Home</h1>')
-});
-
-router.use('/upload', upload);
+router.use('/upload', upload); //excel upload
+router.use('/user', user);  //user profile
+router.use('/',scores);   //leaderboard
 
 module.exports = router;
