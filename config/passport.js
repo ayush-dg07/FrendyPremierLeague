@@ -24,12 +24,13 @@ passport.use(
         let e,r;
         [e,r]= await to(db.query('select * from userLogin where gid=?',[profile.id]));
         if(r.length==0) { //first time user
-            [err, r]= await to(db.query('insert into userLogin(gid) values(?)',
-            [profile.id]));
-            if(err) { return done(err); }
+            let e1,r1;
+            [e1, r1]= await to(db.query('insert into userLogin(gid,isAdmin) values(?,?)',
+            [profile.id,false]));
+            if(e1) { return done(e1); }
         }
         let user;
-        [err, user]=await to(db.query('select * from userLogin where gid=?',[profile.id]));
+        [e, user]=await to(db.query('select * from userLogin where gid=?',[profile.id]));
         done(null,user[0]);  
     })
 )

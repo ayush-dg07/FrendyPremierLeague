@@ -4,6 +4,7 @@ const umobile=4;
 const oid=6;
 const pid=7;
 const pname=8;
+const category=9;
 const amt=12;
 const status=13;
 const date=14;
@@ -25,10 +26,11 @@ var insertFields = (order) => {
         //add to product table
         [e,r] = await to(db.query('select * from product where pid=?',order[pid]));
         if(e) console.log(e);
-        let combo=false;
-        //if(order[pid]==1) combo=true;
+        let combo=false,hnk=false;
+        if(order[category]=='Home and Kitchen') hnk=true; 
+        if(order[category]=='Combo') combo=true; 
         if(r.length==0) {
-            await db.query('insert into product values(?,?,?,?)',[order[pid],order[pname],combo,false]);
+            await db.query('insert into product values(?,?,?,?)',[order[pid],order[pname],combo,hnk]);
         }
 
         //add to orders table

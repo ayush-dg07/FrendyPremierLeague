@@ -1,6 +1,6 @@
 module.exports = {
     google: {
-        clientID: '',
-        clientSecret: ''
+        clientID:'',
+        clientSecret:''
     }
 }
