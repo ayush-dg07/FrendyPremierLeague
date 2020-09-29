@@ -28,7 +28,17 @@
                         <img src="/images/top.jpg" alt="" width="70px" height="70px">
                     </div>
                     <div class="header-bottom-img-block-description">
-                        <p class="header-bottom-img-block-description-p1">Pt <%=scores.byRunsSeries[1].runs%></p>
+                        <p class="header-bottom-img-block-description-p1">
+                            <%if ((scores.byRunsSeries[1].sixes) || (scores.byRunsSeries[1].sixes=="0")){%>
+                                Sixes <%=scores.byRunsSeries[1].sixes%>
+                                <%}else if((scores.byRunsSeries[1].fours) || (scores.byRunsSeries[1].fours=="0")){%>
+                                Fours <%=scores.byRunsSeries[1].fours%>
+                                <%}else{%>
+                                    Pt. <%=scores.byRunsSeries[1].runs%>
+    
+                                    <%}%>
+
+                        </p>
                         <p class="header-bottom-img-block-description-p2"><%=scores.byRunsSeries[1].uname%></p>
                     </div>
                 </div>
@@ -37,7 +47,15 @@
                         <img src="/images/top.jpg" alt="" width="90px" height="90px">
                     </div>
                     <div class="header-bottom-img-block-description">
-                        <p class="header-bottom-img-block-description-p1">Pt <%=scores.byRunsSeries[0].runs%></p>
+                        <p class="header-bottom-img-block-description-p1">
+                            <%if ((scores.byRunsSeries[0].sixes) || (scores.byRunsSeries[0].sixes=="0")){%>
+                                Sixes <%=scores.byRunsSeries[0].sixes%>
+                                <%}else if((scores.byRunsSeries[0].fours) || (scores.byRunsSeries[0].fours=="0")){%>
+                                Fours <%=scores.byRunsSeries[0].fours%>
+                                <%}else{%>
+                                    Pt. <%=scores.byRunsSeries[0].runs%>
+    
+                                    <%}%>                        </p>
                         <p class="header-bottom-img-block-description-p2"><%=scores.byRunsSeries[0].uname%></p>
                     </div>
                 </div>
@@ -46,7 +64,16 @@
                         <img src="/images/top.jpg" alt="" width="70px" height="70px">
                     </div>
                     <div class="header-bottom-img-block-description">
-                        <p class="header-bottom-img-block-description-p1">Pt <%=scores.byRunsSeries[2].runs%></p>
+                        <p class="header-bottom-img-block-description-p1">
+                            <%if ((scores.byRunsSeries[2].sixes) || (scores.byRunsSeries[2].sixes=="0")){%>
+                                Sixes <%=scores.byRunsSeries[2].sixes%>
+                                <%}else if((scores.byRunsSeries[2].fours) || (scores.byRunsSeries[2].fours=="0")){%>
+                                Fours <%=scores.byRunsSeries[2].fours%>
+                                <%}else{%>
+                                    Pt. <%=scores.byRunsSeries[2].runs%>
+    
+                                    <%}%>
+                        </p>
                         <p class="header-bottom-img-block-description-p2"><%=scores.byRunsSeries[2].uname%></p>
                     </div>
                 </div>
@@ -71,7 +98,16 @@
                     </div>
                     <div class="article-box-grid-2"><img src="/images/1.jpg" alt=""></div>
                     <div class="article-box-grid-3"><%=scores.byRunsSeries[score].uname%></div>
-                    <div class="article-box-grid-4"><%=scores.byRunsSeries[score].runs%></div>
+                    <div class="article-box-grid-4">
+                        <%if ((scores.byRunsSeries[score].sixes) || (scores.byRunsSeries[score].sixes=="0")){%>
+                            Sixes <%=scores.byRunsSeries[score].sixes%>
+                            <%}else if((scores.byRunsSeries[score].fours) || (scores.byRunsSeries[score].fours=="0")){%>
+                            Fours <%=scores.byRunsSeries[score].fours%>
+                            <%}else{%>
+                                Pt. <%=scores.byRunsSeries[score].runs%>
+
+                                <%}%>
+                    </div>
                 </div>
                 <%}%>
             </div>

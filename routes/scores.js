@@ -218,7 +218,7 @@ sendScores = async (req,res) => {
         if(cat=="total"){
 
             if(filter=="month"){
-                scoreToSend.byRunsSeries=scoreData.byRunsSeries;
+                scoreToSend.byRunsSeries=scoreData.byRunsMonthly;
             }
             else if(filter=="sixes"){
                 scoreToSend.byRunsSeries=scoreData.bySixesSeries;
@@ -248,6 +248,8 @@ sendScores = async (req,res) => {
             }
             else if(filter=="fours"){
                 scoreToSend.byRunsSeries=scoreData.byFoursDaily;
+                console.log(scoreToSend.byRunsSeries);
+
             }
           
             else if(filter=="day"){
@@ -274,7 +276,7 @@ sendScores = async (req,res) => {
             }
          
             else{
-                scoreToSend.byRunsSeries=scoreData.byRunsSeries;
+                scoreToSend.byRunsSeries=scoreData.byRunsWeekly;
             }
             console.log("weekly");
             return res.render("weekly",{scores:scoreToSend});
@@ -293,7 +295,7 @@ sendScores = async (req,res) => {
             }
          
             else{
-                scoreToSend.byRunsSeries=scoreData.byRunsSeries;
+                scoreToSend.byRunsSeries=scoreData.byRunsMonthly;
             }
             console.log("monthly");
             return res.render("monthly",{scores:scoreToSend});
