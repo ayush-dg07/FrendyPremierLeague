@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPL | Weekly </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <div class="all">
+        <div class="header">
+            <div class="header-top">
+                <a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <span class="header-top-span">Leaderboard</span>
+                <i class="fa fa-bell-o" aria-hidden="true"></i>
+            </div>
+            <div class="header-middle">
+                <a href="../daily/total">Daily</a>
+                <a href="#">Weekly</a>
+                <a href="../monthly/total">Monthly</a>
+            </div>
+            <div class="header-bottom">
+                <div class="header-bottom-img-block-1">
+                    <div class="header-bottom-img-block-1-img">
+                        <img src="/images/top.jpg" alt="" width="70px" height="70px">
+                    </div>
+                    <div class="header-bottom-img-block-description">
+                        <p class="header-bottom-img-block-description-p1">Pt <%=scores.byRunsSeries[1].runs%></p>
+                        <p class="header-bottom-img-block-description-p2"><%=scores.byRunsSeries[1].uname%></p>
+                    </div>
+                </div>
+                <div class="header-bottom-img-block-2">
+                    <div class="header-bottom-img-block-2-img">
+                        <img src="/images/top.jpg" alt="" width="90px" height="90px">
+                    </div>
+                    <div class="header-bottom-img-block-description">
+                        <p class="header-bottom-img-block-description-p1">Pt <%=scores.byRunsSeries[0].runs%></p>
+                        <p class="header-bottom-img-block-description-p2"><%=scores.byRunsSeries[0].uname%></p>
+                    </div>
+                </div>
+                <div class="header-bottom-img-block-3">
+                    <div class="header-bottom-img-block-3-img">
+                        <img src="/images/top.jpg" alt="" width="70px" height="70px">
+                    </div>
+                    <div class="header-bottom-img-block-description">
+                        <p class="header-bottom-img-block-description-p1">Pt <%=scores.byRunsSeries[2].runs%></p>
+                        <p class="header-bottom-img-block-description-p2"><%=scores.byRunsSeries[2].uname%></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="navigation">
+                <a href="#"><button>PLAYER OF THE SERIES</button></a>
+                <a href="/scores/weekly/week"><button>MOST CONSISTENT PLAYER</button></a>
+                <a href="/scores/weekly/sixes"><button>MOST 6s</button></a>
+                <a href="/scores/weekly/fours"><button>MOST 4s</button></a>
+                <a href="/scores/weekly/week"><button>PLAYER OF THE WEEK</button></a>
+                <a href="#"><button>PLAYER OF THE DAY</button></a>
+
+
+            </div>
+            <div class="article">
+              <%for(let score in scores.byRunsSeries){ %>
+                <div class="article-box">
+                    <div class="article-box-grid-1">
+                        <%=parseInt(score)+1%>
+                    </div>
+                    <div class="article-box-grid-2"><img src="/images/1.jpg" alt=""></div>
+                    <div class="article-box-grid-3"><%=scores.byRunsSeries[score].uname%></div>
+                    <div class="article-box-grid-4"><%=scores.byRunsSeries[score].runs%></div>
+                </div>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

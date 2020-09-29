@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" type="text/css">
+    <title>FPL</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="container my-4 " >
+            <% if(msg) { %> <%= msg %><br>  <% } %> 
+
+            <form action="/auth/mobile" method="POST">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Mobile Number</label>
+                  <input type="tel" class="form-control" name="umobile" placeholder="enter 10 digit phone number" pattern="[0-9]{10}" required">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your mobile number with anyone else.</small>
+                </div>
+             
+                <input type="submit" class="btn btn-primary">
+              </form>
+          </div>
+
+   
+ 
+</body>
+</html>
