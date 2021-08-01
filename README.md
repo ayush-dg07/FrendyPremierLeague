@@ -1,2 +1,2 @@
-# fready
+# FPL
 Fready Premiere League
